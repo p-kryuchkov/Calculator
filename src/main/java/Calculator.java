@@ -1,8 +1,8 @@
 public class Calculator {
-    private double firstNumber;
-    private double secondNumber;
-    private String operation;
-    public double result;
+    private static double firstNumber;
+    private static double secondNumber;
+    private static String operation;
+    private static double result;
 
     public Calculator() {
         this.firstNumber = firstNumber;
@@ -10,7 +10,7 @@ public class Calculator {
         this.operation = operation;
     }
 
-    public double getFirstNumber() {
+    public static double getFirstNumber() {
         return firstNumber;
     }
 
@@ -18,7 +18,7 @@ public class Calculator {
         this.firstNumber = firstNumber;
     }
 
-    public double getSecondNumber() {
+    public static double getSecondNumber() {
         return secondNumber;
     }
 
@@ -26,7 +26,7 @@ public class Calculator {
         this.secondNumber = secondNumber;
     }
 
-    public String getOperation() {
+    public static String getOperation() {
         return operation;
     }
 
@@ -34,7 +34,7 @@ public class Calculator {
         this.operation = operation;
     }
 
-    private void getResult() {
+    public static double getResult() {
         switch (operation) {
             case "+":
                 result = firstNumber + secondNumber;
@@ -48,14 +48,11 @@ public class Calculator {
             case "/":
                 result = firstNumber / secondNumber;
                 break;
-
         }
+        return result;
+
     }
 
-    @Override
-    public String toString() {
-        return firstNumber + operation + secondNumber + result;
-    }
 }
 
 

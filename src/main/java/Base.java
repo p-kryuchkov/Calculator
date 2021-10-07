@@ -3,11 +3,12 @@ public class Base {
         Calculator firstNumber = new Calculator();
         Calculator secondNumber = new Calculator();
         Calculator operation = new Calculator();
-        firstNumber.setFirstNumber(25);
+        firstNumber.setFirstNumber(5);
         secondNumber.setSecondNumber(2);
-        operation.setOperation("*");
-        System.out.println(Calculator.toString());
-
+        operation.setOperation("/");
+        StringBuilder showResult = new StringBuilder();
+        showResult.append(Calculator.getFirstNumber() + " " + Calculator.getOperation() + " " + Calculator.getSecondNumber() + " = " + Calculator.getResult());
+        System.out.println(showResult.toString());
 
     }
 }
