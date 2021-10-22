@@ -1,8 +1,8 @@
 public class Calculator {
-    private static double firstNumber;
-    private static double secondNumber;
+    private static int firstNumber;
+    private static int secondNumber;
     private static String operation;
-    private static double result;
+    private static int result;
 
     public Calculator() {
         this.firstNumber = firstNumber;
@@ -10,19 +10,19 @@ public class Calculator {
         this.operation = operation;
     }
 
-    public static double getFirstNumber() {
+    public static int getFirstNumber() {
         return firstNumber;
     }
 
-    public void setFirstNumber(double firstNumber) {
+    public void setFirstNumber(int firstNumber) {
         this.firstNumber = firstNumber;
     }
 
-    public static double getSecondNumber() {
+    public static int getSecondNumber() {
         return secondNumber;
     }
 
-    public void setSecondNumber(double secondNumber) {
+    public void setSecondNumber(int secondNumber) {
         this.secondNumber = secondNumber;
     }
 
@@ -34,7 +34,7 @@ public class Calculator {
         this.operation = operation;
     }
 
-    public static double getResult() {
+    public static int getResult() throws Exception {
         switch (operation) {
             case "+":
                 result = firstNumber + secondNumber;
@@ -46,6 +46,7 @@ public class Calculator {
                 result = firstNumber * secondNumber;
                 break;
             case "/":
+                if (secondNumber == 0) throw new Exception ("Делить на ноль нельзя");
                 result = firstNumber / secondNumber;
                 break;
         }
