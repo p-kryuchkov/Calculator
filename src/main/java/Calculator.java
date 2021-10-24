@@ -5,9 +5,9 @@ public class Calculator {
     private static int result;
 
     public Calculator() {
-        this.firstNumber = firstNumber;
-        this.secondNumber = secondNumber;
-        this.operation = operation;
+        this.firstNumber = Calculator.firstNumber;
+        this.secondNumber = Calculator.secondNumber;
+        this.operation = Calculator.operation;
     }
 
     public static int getFirstNumber() {
