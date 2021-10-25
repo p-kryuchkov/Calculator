@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class Calculator {
     private static int firstNumber;
     private static int secondNumber;
@@ -34,22 +36,19 @@ public class Calculator {
         this.operation = operation;
     }
 
-    public static int getResult() throws Exception {
-        switch (operation) {
-            case "+":
+    public static int getResult() {
+            if (Objects.equals(operation, "+")) {
                 result = firstNumber + secondNumber;
-                break;
-            case "-":
+            } else if (Objects.equals(operation, "-")) {
                 result = firstNumber - secondNumber;
-                break;
-            case "*":
+            } else if (Objects.equals(operation, "*")) {
                 result = firstNumber * secondNumber;
-                break;
-            case "/":
-                if (secondNumber == 0) throw new Exception ("Делить на ноль нельзя");
+            } else if (Objects.equals(operation, "/")) {
                 result = firstNumber / secondNumber;
-                break;
-        }
+            }
+
+
+
         return result;
 
     }
