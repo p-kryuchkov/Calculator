@@ -1,30 +1,30 @@
 import java.util.Objects;
 
 public class Calculator {
-    private static int firstNumber;
-    private static int secondNumber;
+    private static double firstNumber;
+    private static double secondNumber;
     private static String operation;
-    private static int result;
+    private static double result;
 
-    public Calculator() {
-        this.firstNumber = Calculator.firstNumber;
-        this.secondNumber = Calculator.secondNumber;
-        this.operation = Calculator.operation;
+    public Calculator(double firstNumber, double secondNumber, String operation) {
+        this.firstNumber = firstNumber;
+        this.secondNumber = secondNumber;
+        this.operation = operation;
     }
 
-    public static int getFirstNumber() {
+    public static double getFirstNumber() {
         return firstNumber;
     }
 
-    public void setFirstNumber(int firstNumber) {
+    public void setFirstNumber(double firstNumber) {
         this.firstNumber = firstNumber;
     }
 
-    public static int getSecondNumber() {
+    public static double getSecondNumber() {
         return secondNumber;
     }
 
-    public void setSecondNumber(int secondNumber) {
+    public void setSecondNumber(double secondNumber) {
         this.secondNumber = secondNumber;
     }
 
@@ -36,7 +36,7 @@ public class Calculator {
         this.operation = operation;
     }
 
-    public static int getResult() {
+    public static double getResult() {
             if (Objects.equals(operation, "+")) {
                 result = firstNumber + secondNumber;
             } else if (Objects.equals(operation, "-")) {
@@ -44,7 +44,8 @@ public class Calculator {
             } else if (Objects.equals(operation, "*")) {
                 result = firstNumber * secondNumber;
             } else if (Objects.equals(operation, "/")) {
-                result = firstNumber / secondNumber;
+                if (secondNumber == 0) throw new ArithmeticException();
+                else result = firstNumber / secondNumber;
             }
 
 
